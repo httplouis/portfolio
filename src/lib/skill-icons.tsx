@@ -14,7 +14,6 @@ import {
   SiFastapi, 
   SiLaravel, 
   SiPhp, 
-  SiJava, 
   SiMongodb, 
   SiPostgresql, 
   SiMysql,
@@ -26,7 +25,6 @@ import {
   SiSupabase,
   SiOracle,
   SiFigma,
-  SiPowerbi,
   SiJira,
   SiNotion
 } from "react-icons/si";
@@ -54,7 +52,6 @@ export const skillIcons: Record<string, ReactNode> = {
   "FastAPI": <SiFastapi className="w-4 h-4" />,
   "Laravel": <SiLaravel className="w-4 h-4" />,
   "PHP": <SiPhp className="w-4 h-4" />,
-  "Java": <SiJava className="w-4 h-4" />,
   "MongoDB": <SiMongodb className="w-4 h-4" />,
   "PostgreSQL": <SiPostgresql className="w-4 h-4" />,
   "MySQL": <SiMysql className="w-4 h-4" />,
@@ -71,7 +68,6 @@ export const skillIcons: Record<string, ReactNode> = {
   "Supabase": <SiSupabase className="w-4 h-4" />,
   "Oracle": <SiOracle className="w-4 h-4" />,
   "Figma": <SiFigma className="w-4 h-4" />,
-  "PowerBI": <SiPowerbi className="w-4 h-4" />,
   "Jira": <SiJira className="w-4 h-4" />,
   "Notion": <SiNotion className="w-4 h-4" />,
 };

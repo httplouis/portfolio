@@ -10,6 +10,7 @@ export interface GitHubRepo {
   topics: string[];
   created_at: string;
   updated_at: string;
+  fork: boolean;
 }
 
 export async function fetchGitHubRepos(username: string): Promise<GitHubRepo[]> {
