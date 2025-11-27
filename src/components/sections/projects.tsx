@@ -38,8 +38,9 @@ export function Projects() {
         const response = await fetch(`https://api.github.com/users/httplouis/repos?sort=updated&per_page=100`);
         if (!response.ok) throw new Error("Failed to fetch");
         const data: GitHubRepo[] = await response.json();
+        const excludedRepos = ['portfolio', 'rosales', 'semis-ios', 'semis_ios', 'semis-activity', 'semis_activity'];
         const filtered = data
-          .filter((repo) => !repo.fork)
+          .filter((repo) => !repo.fork && !excludedRepos.some(excluded => repo.name.toLowerCase().includes(excluded.toLowerCase())))
           .sort((a, b) => (b.stargazers_count + b.forks_count) - (a.stargazers_count + a.forks_count))
           .slice(0, 12);
         setRepos(filtered);

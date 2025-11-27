@@ -39,3 +39,13 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# gradle
+.gradle/
+build/
+*.iml
+.idea/
+
+# other
+*.log
+.DS_Store

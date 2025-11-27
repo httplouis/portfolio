@@ -9,6 +9,8 @@ export interface PersonalInfo {
   linkedin?: string;
   resume?: string;
   profileImage: string;
+  dateOfBirth?: string;
+  additionalInfo?: string;
 }
 
 export interface Experience {
@@ -64,6 +66,8 @@ export const personalInfo: PersonalInfo = {
   linkedin: "https://www.linkedin.com/in/jose-louis-rosales08/",
   resume: "/Rosales_Resume.docx",
   profileImage: "/jolo.jpg",
+  dateOfBirth: "2003-10-08",
+  additionalInfo: "Passionate about creating innovative solutions and continuously learning new technologies. I enjoy collaborating with teams and turning ideas into reality through code.",
 };
 
 export const experiences: Experience[] = [

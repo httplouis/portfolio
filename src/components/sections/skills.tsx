@@ -82,18 +82,15 @@ export function Skills() {
           transition={{ duration: 0.6, ease: [0.4, 0, 0.2, 1] }}
           className="mb-16 relative"
         >
-          <motion.div
-            animate={{ 
-              width: ["20px", "100px", "20px"],
-              rotate: [0, 45, 0],
-            }}
-            transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-            className="h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full mb-4"
-            style={{ transform: "skewX(-15deg)" }}
-          />
-          <p className="text-blue-400 uppercase text-sm font-semibold tracking-wider mb-2">
-            Skills
-          </p>
+          <div className="flex items-center gap-3 mb-4">
+            <div 
+              className="h-0.5 w-16 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 origin-left" 
+              style={{ transform: "rotate(-45deg)" }}
+            />
+            <p className="text-blue-400 uppercase text-sm font-semibold tracking-wider">
+              SKILLS
+            </p>
+          </div>
           <h2 className="text-4xl md:text-5xl font-bold text-white">
             My Technical <GradientText>Skills</GradientText>
           </h2>
