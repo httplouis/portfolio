@@ -118,6 +118,7 @@
   }
   body {
     @apply bg-background text-foreground;
+    overflow-x: hidden;
   }
   
   html {
@@ -195,4 +196,41 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+/* FloatingNav - Always visible */
+[data-floating-nav] {
+  position: fixed !important;
+  z-index: 99999 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  display: block !important;
+}
+
+/* Ensure no parent containers affect FloatingNav */
+body > [data-floating-nav],
+html > body > [data-floating-nav] {
+  position: fixed !important;
+  z-index: 99999 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* Prevent any section from hiding FloatingNav */
+section[id] {
+  position: relative;
+  z-index: 1;
+}
+
+/* Certification Modal - Override default Dialog max-width */
+[data-slot="dialog-content"] {
+  max-width: 95vw !important;
+  width: 95vw !important;
+}
+
+@media (min-width: 640px) {
+  [data-slot="dialog-content"] {
+    max-width: 95vw !important;
+  }
 }

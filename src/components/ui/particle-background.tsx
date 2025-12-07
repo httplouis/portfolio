@@ -23,7 +23,7 @@ export function ParticleBackground() {
       radius: number;
     }> = [];
 
-    const particleCount = 50;
+    const particleCount = 20;
 
     for (let i = 0; i < particleCount; i++) {
       particles.push({
@@ -76,7 +76,7 @@ export function ParticleBackground() {
     <canvas
       ref={canvasRef}
       className="fixed inset-0 pointer-events-none z-0"
-      style={{ opacity: 0.3 }}
+      style={{ opacity: 0.15 }}
     />
   );
 }

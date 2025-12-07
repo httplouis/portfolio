@@ -12,18 +12,20 @@ import { FloatingNav } from "@/components/ui/floating-nav";
 
 export default function Home() {
   return (
-    <main className="relative">
+    <>
       <ParticleBackground />
       <ScrollProgress />
       <FloatingNav />
-      <Hero />
-      <About />
-      <Experience />
-      <Skills />
-      <Projects />
-      <Certifications />
-      <Education />
-      <Contact />
-    </main>
+      <main className="relative">
+        <Hero />
+        <About />
+        <Experience />
+        <Skills />
+        <Projects />
+        <Certifications />
+        <Education />
+        <Contact />
+      </main>
+    </>
   );
 }

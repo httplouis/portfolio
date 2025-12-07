@@ -1,387 +1,519 @@
-Portfolio Website - Design & Development Prompt
-Project Overview
-A modern, dark-themed portfolio website with smooth animations, interactive elements, and a single-page layout. No sidebar navigation—sections flow vertically with smooth scrolling.
-Design System
-Color Palette
-Background: #0a0a0a (primary), #0f0f0f (alternate sections), #1a1a1a (cards)
-Text: #ffffff (primary), #ededed (foreground), #9ca3af (muted/gray-400)
-Accent Colors:
-Primary Blue: #3b82f6
-Secondary Purple: #8b5cf6
-Accent Pink: #ec4899
-Borders: #2a2a2a
-Gradient Text: Linear gradient from #3b82f6 → #8b5cf6 → #ec4899 with animated background position
-Typography
-Fonts: Inter, Poppins, system-ui sans-serif
-Headings: Bold, letter-spacing -0.02em, line-height 1.2
-Body: Line-height 1.6, relaxed spacing
-Visual Effects
-Gradient Text: Animated gradient shifting (5s infinite ease)
-Glass Morphism: rgba(26, 26, 26, 0.7) with backdrop-filter: blur(10px)
-Glow Effects: Radial gradients with color opacity (10-30%)
-Particle Background: Animated particles in background
-Spotlight Effect: Dynamic spotlight following mouse/scroll
-Animated Gradient Overlay: Subtle animated gradient background
-Layout Structure
-Single-Page Vertical Layout
-All sections flow vertically. No sidebar navigation. Smooth scroll between sections.
-Section Order:
-Hero
-About
-Experience
-Skills
-Projects
-Certifications
-Education
-Contact
-Section Styling Pattern
-Padding: py-20 md:py-24 px-4 md:px-6 lg:px-8
-Max Width: max-w-7xl mx-auto
-Background: Alternates between #0a0a0a and #0f0f0f
-Section Headers:
-Small colored bar (16px height, gradient from blue to purple)
-Uppercase label in blue (#3b82f6)
-Large heading with gradient text accent
-Pattern: "Section Title <span className='gradient-text'>Highlighted Word</span>"
-Component Details
-1. Hero Section
-Purpose: First impression with name, role, and quick stats
-Features:
-Full viewport height (min-h-screen)
-Centered content with max-width container
-Animated background:
-Mouse-following glow effect (500px blur circle)
-Floating orbs (pulsing, 8-10s animation)
-Radial gradient overlays
-Content:
-Welcome badge with sparkle icon
-Large name with gradient text
-Role/title with rocket/zap icons
-Animated text reveal for description
-Stats grid (3 columns): Years Experience, Projects, Certifications
-Tech icons (Web Dev, Mobile, Backend) with hover effects
-CTA buttons: "View My Work" (gradient), "Get In Touch" (outline)
-Social links (GitHub, LinkedIn, Download Resume)
-Scroll indicator at bottom (animated arrow)
-Animations:
-Staggered fade-in for elements
-Hover scale/translate on interactive elements
-Magnetic button effect on primary CTA
-Smooth transitions (0.3-0.6s)
-2. About Section
-Purpose: Personal summary and key attributes
-Layout: 2-column grid (responsive to single column)
-Left Column:
-Summary Card (Bento-style):
-Icon header with sparkle
-Text reveal animation for summary
-Additional descriptive paragraph
-Stats Grid (3 cards):
-Icon, large number (gradient text), label
-Hover: lift effect, glow
-3D card effect
-Right Column:
-Feature Cards (3 cards):
-Icon in colored container
-Title and description
-Hover: lift, colored glow, background gradient
-Each with unique accent color
-Design Elements:
-Bento grid cards with gradient borders
-3D card tilt effects
-Color-coded icons per feature
-3. Experience Section
-Purpose: Work experience timeline
-Layout: Vertical timeline with left border
-Timeline Design:
-Left border line (border-l-2) with hover color change
-Timeline dots (4px circles) on border
-Dot animation: scale on appear, pulsing glow on hover
-Cards connected to timeline
-Experience Cards:
-Gradient background (from-[#1a1a1a] to-[#0f0f0f])
-Header: Briefcase icon, title, company (blue), date/location
-Description: Bullet points with checkmark icons
-Hover: lift, border color change, gradient overlay
-3D card effect
-Data Structure:
-Title, Company, Location
-Start Date - End Date
-Array of description bullets
-4. Skills Section
-Purpose: Technical skills organized by category
-Layout:
-Top: 3 category cards (grid)
-Bottom: Complete tech stack display
-Category Cards (3 columns):
-Header: Icon, category label, description
-Skills Grid: 2-column grid of skill badges
-Skill Badge:
-Name centered
-Hover: scale, lift, colored glow, progress bar animation
-Category color coding
-Footer: "+X more technologies" if applicable
-Complete Tech Stack:
-Large container with all skills
-Flex wrap layout
-Color-coded by category (web/mobile/software)
-Hover: scale, glow, color intensity increase
-Spring animations on appear
-Categories:
-Web/Frontend: Blue (#3b82f6)
-Mobile: Purple (#8b5cf6)
-Software/Tools: Pink (#ec4899)
-5. Projects Section
-Purpose: Showcase GitHub projects
-Layout: 3-column grid (responsive)
-Project Cards:
-Header: Code icon, external link buttons (homepage, GitHub)
-Title: Gradient text that changes on hover
-Description: 3-line clamp, or placeholder if empty
-Footer:
-Stats: Stars (yellow), Forks (purple)
-Language badge: Gradient pill with language name
-Topics: Up to 4 topic tags with hover effects
-Background: Gradient overlay on hover
-3D Card Effect: Tilt on hover
-Features:
-Loading skeleton states
-Auto-fetch from GitHub API
-Sort by stars + forks
-External link icons with hover animations
-6. Certifications Section
-Purpose: Display professional certifications
-Layout: 3-column grid (responsive)
-Certification Cards:
-Preview Area (if PDF available):
-Colored header section (issuer-specific color)
-File icon with "Click to view" text
-PDF badge indicator
-Clickable to open PDF
-Content:
-Issuer badge with icon (colored by issuer)
-Certificate title (bold, white)
-Date (if available) with calendar icon
-Actions:
-"View Certificate" link (if URL available) - opens in new tab
-"Download PDF" button (if PDF available)
-Hover effects on all actions
-Issuer Color Coding:
-Meta: Blue
-Google: Green
-Packt: Purple
-IBM: Cyan
-University of Michigan: Yellow
-Wadhwani Foundation: Orange
-CCNA: Red
-Oracle: Red-600
-Default: Gray
-Features:
-PDF preview area with click-to-view
-External link for verification URLs
-Download functionality
-3D card effects
-Issuer-specific color themes
-7. Education Section
-Purpose: Academic background timeline
-Layout: Vertical timeline (similar to Experience)
-Design:
-Left border timeline
-Timeline dots (appear on hover)
-Education cards:
-Graduation cap icon
-Degree (bold, white)
-Institution (blue, semibold)
-Date range with calendar icon
-Hover: lift, border color change, scale
-8. Contact Section
-Purpose: Contact information and form
-Layout: 2-column grid
-Left Column - Contact Info:
-Contact Methods (3 cards):
-Icon in colored container
-Label (small, gray)
-Value (white, medium)
-Clickable (mailto/tel links)
-Hover: lift effect
-Social Links:
-Icon buttons (LinkedIn, GitHub)
-Hover: scale, lift, brand colors
-Right Column - Contact Form:
-Form container with gradient background
-Fields:
-Name (text input)
-Email (email input)
-Message (textarea, 6 rows)
-Styling:
-Dark inputs (#0a0a0a background)
-Border focus: blue with ring
-Placeholder: gray-500
-Submit Button:
-Shiny button effect
-Loading state with spinner
-Icon + text
-UI Components & Effects
-Reusable UI Components
-3D Card (Card3D):
-Tilt effect on mouse move
-Perspective transform
-Smooth transitions
-Bento Grid Card (BentoCard):
-Gradient border option
-Glass morphism effect
-Hover animations
-Animated Text Reveal (TextReveal):
-Character-by-character reveal
-Smooth fade-in animation
-Magnetic Button (MagneticButton):
-Follows mouse cursor
-Smooth magnetic pull effect
-Glow Card (GlowCard):
-Animated glow border
-Color transitions
-Shiny Button (ShinyButton):
-Shimmer effect
-Gradient background
-Ripple Button (RippleButton):
-Ripple effect on click
-Wave animation
-Scroll Progress (ScrollProgress):
-Top progress bar
-Gradient fill
-Smooth updates
-Particle Background (ParticleBackground):
-Animated particles
-Low opacity
-Smooth movement
-Spotlight (Spotlight):
-Dynamic spotlight effect
-Follows scroll/mouse
-Radial gradient
-Animations & Interactions
-Scroll Animations
-Framer Motion: whileInView for scroll-triggered animations
-Viewport: once: true, margin: "-100px"
-Stagger: Children animate with delay (0.05s-0.1s intervals)
-Transitions: Spring physics, duration 0.5-0.6s
-Hover Effects
-Scale: 1.05-1.1 on hover
-Lift: y: -2 to y: -5 translate
-Glow: Border color change, background gradient overlay
-Rotate: Icons rotate 360° on hover (0.5s)
-Page Load Animations
-Container: Stagger children
-Items: Fade in + slide up (opacity: 0, y: 20 → opacity: 1, y: 0)
-Delays: Progressive delays for sequential appearance
-Interactive Elements
-Buttons: Scale on tap (whileTap: { scale: 0.95 })
-Links: Color transitions, icon translations
-Cards: 3D tilt, glow on hover
-Form Inputs: Focus ring, border color change
-Technical Stack
-Core Technologies
-Framework: Next.js 16 (App Router)
-Language: TypeScript
-Styling: Tailwind CSS 4
-Animations: Framer Motion
-Icons: Lucide React
-Package Manager: pnpm
-Key Dependencies
-framer-motion: Animations
-lucide-react: Icons
-date-fns: Date formatting
-class-variance-authority: Component variants
-clsx & tailwind-merge: Class utilities
-Data Management
-Static Data: lib/data.ts (personal info, experience, skills, certifications, education)
-GitHub Integration: lib/github.ts (fetch repositories)
-TypeScript Types: types/index.ts
-Responsive Design
-Breakpoints
-Mobile: Default (< 768px)
-Tablet: md: (≥ 768px)
-Desktop: lg: (≥ 1024px)
-Responsive Patterns
-Grids: grid-cols-1 md:grid-cols-2 lg:grid-cols-3
-Text: text-4xl md:text-5xl lg:text-6xl
-Padding: px-4 md:px-6 lg:px-8
-Spacing: gap-4 md:gap-6 lg:gap-8
-Mobile Optimizations
-Single column layouts
-Reduced padding/spacing
-Touch-friendly button sizes
-Simplified animations
-Accessibility Features
-Focus States: Visible outline on focus-visible
-Semantic HTML: Proper heading hierarchy, section tags
-ARIA Labels: On icon-only buttons
-Keyboard Navigation: All interactive elements accessible
-Color Contrast: WCAG compliant text colors
-Smooth Scrolling: scroll-behavior: smooth
-Performance Optimizations
-Lazy Loading: Components load on scroll
-Image Optimization: Next.js Image component (if used)
-Code Splitting: Automatic with Next.js
-Animation Performance: will-change properties
-Reduced Motion: Respects user preferences
-Custom Styling Details
-Gradient Text Class
-.gradient-text {  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);  background-size: 200% 200%;  -webkit-background-clip: text;  -webkit-text-fill-color: transparent;  background-clip: text;  animation: gradient-shift 5s ease infinite;}
-Custom Scrollbar
-Width: 8px
-Track: Background color
-Thumb: Gradient (blue → purple → pink)
-Rounded corners
-Selection Color
-Background: rgba(59, 130, 246, 0.3)
-Text: White
-Section-Specific Requirements
-Certifications Section (Detailed)
-Grid Layout: Responsive 3-column
-Card Structure:
-PDF Preview Area (if available):
-Colored header matching issuer
-File icon with animation
-"Click to view" text
-PDF badge
-Content Area:
-Issuer badge (colored icon container)
-Certificate title
-Date with calendar icon
-Actions Footer:
-View Certificate link (external)
-Download PDF button
-Color Themes: Issuer-specific color schemes
-Interactions:
-PDF opens in new tab
-Hover effects on all elements
-3D card tilt
-Projects Section
-GitHub Integration: Auto-fetch repositories
-Sorting: By stars + forks (descending)
-Display:
-Project name
-Description (or placeholder)
-Stats (stars, forks)
-Primary language badge
-Topics (max 4)
-Links (homepage, GitHub)
-Loading States: Skeleton cards
-Implementation Notes
-No Sidebar: All navigation is through smooth scrolling
-Section IDs: Each section has id for anchor links
-Scroll Behavior: Smooth scroll between sections
-Background Effects: Fixed position, z-index layering
-Component Structure: Modular, reusable components
-Data-Driven: All content from lib/data.ts
-Type Safety: Full TypeScript coverage
-Final Design Principles
-Dark Theme: Professional dark aesthetic
-Modern UI: Glass morphism, gradients, 3D effects
-Smooth Animations: Framer Motion throughout
-Interactive: Hover effects, magnetic buttons, 3D cards
-Responsive: Mobile-first, scales to all devices
-Performance: Optimized animations, lazy loading
-Accessibility: WCAG compliant, keyboard navigation
-Clean Code: TypeScript, modular components, reusable UI
-This prompt covers the portfolio concept, design system, components, animations, and implementation details. Use it to recreate the portfolio in another project.
+# Portfolio Website - Complete Design & Development Prompt
+
+## Project Overview
+Build a modern, dark-themed portfolio website with smooth animations, interactive elements, and a single-page vertical layout. **NO SIDEBAR NAVIGATION** - all sections flow vertically with smooth scrolling between them.
+
+---
+
+## Design System
+
+### Color Palette
+- **Background**: `#0a0a0a` (primary), `#0f0f0f` (alternate sections), `#1a1a1a` (cards)
+- **Text**: `#ffffff` (primary), `#ededed` (foreground), `#9ca3af` (muted/gray-400)
+- **Accent Colors**:
+  - Primary Blue: `#3b82f6`
+  - Secondary Purple: `#8b5cf6`
+  - Accent Pink: `#ec4899`
+- **Borders**: `#2a2a2a`
+- **Gradient Text**: Linear gradient from `#3b82f6` → `#8b5cf6` → `#ec4899` with animated background position
+
+### Typography
+- **Fonts**: Inter, Poppins, system-ui sans-serif
+- **Headings**: Bold, letter-spacing `-0.02em`, line-height `1.2`
+- **Body**: Line-height `1.6`, relaxed spacing
+
+### Visual Effects
+- **Gradient Text**: Animated gradient shifting (5s infinite ease)
+- **Glass Morphism**: `rgba(26, 26, 26, 0.7)` with `backdrop-filter: blur(10px)`
+- **Glow Effects**: Radial gradients with color opacity (10-30%)
+- **Particle Background**: Animated particles in background
+- **Spotlight Effect**: Dynamic spotlight following mouse/scroll
+- **Animated Gradient Overlay**: Subtle animated gradient background
+
+---
+
+## Layout Structure
+
+### Single-Page Vertical Layout
+All sections flow vertically. **NO SIDEBAR NAVIGATION**. Smooth scroll between sections.
+
+**Section Order:**
+1. Hero
+2. About
+3. Experience
+4. Skills
+5. Projects
+6. Certifications
+7. Education
+8. Contact
+
+### Section Styling Pattern
+- **Padding**: `py-20 md:py-24 px-4 md:px-6 lg:px-8`
+- **Max Width**: `max-w-7xl mx-auto`
+- **Background**: Alternates between `#0a0a0a` and `#0f0f0f`
+- **Section Headers**: 
+  - Small colored bar (16px height, gradient from blue to purple)
+  - Uppercase label in blue (`#3b82f6`)
+  - Large heading with gradient text accent
+  - Pattern: "Section Title <span className='gradient-text'>Highlighted Word</span>"
+
+---
+
+## Component Details
+
+### 1. Hero Section
+**Purpose**: First impression with name, role, and quick stats
+
+**Features**:
+- Full viewport height (`min-h-screen`)
+- Centered content with max-width container
+- Animated background:
+  - Mouse-following glow effect (500px blur circle)
+  - Floating orbs (pulsing, 8-10s animation)
+  - Radial gradient overlays
+- Content:
+  - Welcome badge with sparkle icon
+  - Large name with gradient text
+  - Role/title with rocket/zap icons
+  - Animated text reveal for description
+  - Stats grid (3 columns): Years Experience, Projects, Certifications
+  - Tech icons (Web Dev, Mobile, Backend) with hover effects
+  - CTA buttons: "View My Work" (gradient), "Get In Touch" (outline)
+  - Social links (GitHub, LinkedIn, Download Resume)
+  - Scroll indicator at bottom (animated arrow)
+
+**Animations**:
+- Staggered fade-in for elements
+- Hover scale/translate on interactive elements
+- Magnetic button effect on primary CTA
+- Smooth transitions (0.3-0.6s)
+
+---
+
+### 2. About Section
+**Purpose**: Personal summary and key attributes
+
+**Layout**: 2-column grid (responsive to single column)
+
+**Left Column**:
+- **Summary Card** (Bento-style):
+  - Icon header with sparkle
+  - Text reveal animation for summary
+  - Additional descriptive paragraph
+- **Stats Grid** (3 cards):
+  - Icon, large number (gradient text), label
+  - Hover: lift effect, glow
+  - 3D card effect
+
+**Right Column**:
+- **Feature Cards** (3 cards):
+  - Icon in colored container
+  - Title and description
+  - Hover: lift, colored glow, background gradient
+  - Each with unique accent color
+
+**Design Elements**:
+- Bento grid cards with gradient borders
+- 3D card tilt effects
+- Color-coded icons per feature
+
+---
+
+### 3. Experience Section
+**Purpose**: Work experience timeline
+
+**Layout**: Vertical timeline with left border
+
+**Timeline Design**:
+- Left border line (`border-l-2`) with hover color change
+- Timeline dots (4px circles) on border
+- Dot animation: scale on appear, pulsing glow on hover
+- Cards connected to timeline
+
+**Experience Cards**:
+- Gradient background (`from-[#1a1a1a] to-[#0f0f0f]`)
+- Header: Briefcase icon, title, company (blue), date/location
+- Description: Bullet points with checkmark icons
+- Hover: lift, border color change, gradient overlay
+- 3D card effect
+
+**Data Structure**:
+- Title, Company, Location
+- Start Date - End Date
+- Array of description bullets
+
+---
+
+### 4. Skills Section
+**Purpose**: Technical skills organized by category
+
+**Layout**: 
+- Top: 3 category cards (grid)
+- Bottom: Complete tech stack display
+
+**Category Cards** (3 columns):
+- **Header**: Icon, category label, description
+- **Skills Grid**: 2-column grid of skill badges
+- **Skill Badge**: 
+  - Name centered
+  - Hover: scale, lift, colored glow, progress bar animation
+  - Category color coding
+- **Footer**: "+X more technologies" if applicable
+
+**Complete Tech Stack**:
+- Large container with all skills
+- Flex wrap layout
+- Color-coded by category (web/mobile/software)
+- Hover: scale, glow, color intensity increase
+- Spring animations on appear
+
+**Categories**:
+- **Web/Frontend**: Blue (`#3b82f6`)
+- **Mobile**: Purple (`#8b5cf6`)
+- **Software/Tools**: Pink (`#ec4899`)
+
+---
+
+### 5. Projects Section
+**Purpose**: Showcase GitHub projects
+
+**Layout**: 3-column grid (responsive)
+
+**Project Cards**:
+- **Header**: Code icon, external link buttons (homepage, GitHub)
+- **Title**: Gradient text that changes on hover
+- **Description**: 3-line clamp, or placeholder if empty
+- **Footer**:
+  - Stats: Stars (yellow), Forks (purple)
+  - Language badge: Gradient pill with language name
+  - Topics: Up to 4 topic tags with hover effects
+- **Background**: Gradient overlay on hover
+- **3D Card Effect**: Tilt on hover
+
+**Features**:
+- Loading skeleton states
+- Auto-fetch from GitHub API
+- Sort by stars + forks
+- External link icons with hover animations
+
+---
+
+### 6. Certifications Section
+**Purpose**: Display professional certifications
+
+**Layout**: 3-column grid (responsive)
+
+**Certification Cards**:
+- **Preview Area** (if PDF available):
+  - Colored header section (issuer-specific color)
+  - File icon with "Click to view" text
+  - PDF badge indicator
+  - Clickable to open PDF
+- **Content**:
+  - Issuer badge with icon (colored by issuer)
+  - Certificate title (bold, white)
+  - Date (if available) with calendar icon
+- **Actions**:
+  - "View Certificate" link (if URL available) - opens in new tab
+  - "Download PDF" button (if PDF available)
+  - Hover effects on all actions
+
+**Issuer Color Coding**:
+- Meta: Blue
+- Google: Green
+- Packt: Purple
+- IBM: Cyan
+- University of Michigan: Yellow
+- Wadhwani Foundation: Orange
+- CCNA: Red
+- Oracle: Red-600
+- Default: Gray
+
+**Features**:
+- PDF preview area with click-to-view
+- External link for verification URLs
+- Download functionality
+- 3D card effects
+- Issuer-specific color themes
+
+---
+
+### 7. Education Section
+**Purpose**: Academic background timeline
+
+**Layout**: Vertical timeline (similar to Experience)
+
+**Design**:
+- Left border timeline
+- Timeline dots (appear on hover)
+- Education cards:
+  - Graduation cap icon
+  - Degree (bold, white)
+  - Institution (blue, semibold)
+  - Date range with calendar icon
+- Hover: lift, border color change, scale
+
+---
+
+### 8. Contact Section
+**Purpose**: Contact information and form
+
+**Layout**: 2-column grid
+
+**Left Column - Contact Info**:
+- **Contact Methods** (3 cards):
+  - Icon in colored container
+  - Label (small, gray)
+  - Value (white, medium)
+  - Clickable (mailto/tel links)
+  - Hover: lift effect
+- **Social Links**:
+  - Icon buttons (LinkedIn, GitHub)
+  - Hover: scale, lift, brand colors
+
+**Right Column - Contact Form**:
+- Form container with gradient background
+- Fields:
+  - Name (text input)
+  - Email (email input)
+  - Message (textarea, 6 rows)
+- Styling:
+  - Dark inputs (`#0a0a0a` background)
+  - Border focus: blue with ring
+  - Placeholder: gray-500
+- Submit Button:
+  - Shiny button effect
+  - Loading state with spinner
+  - Icon + text
+
+---
+
+## UI Components & Effects
+
+### Reusable UI Components
+
+1. **3D Card** (`Card3D`):
+   - Tilt effect on mouse move
+   - Perspective transform
+   - Smooth transitions
+
+2. **Bento Grid Card** (`BentoCard`):
+   - Gradient border option
+   - Glass morphism effect
+   - Hover animations
+
+3. **Animated Text Reveal** (`TextReveal`):
+   - Character-by-character reveal
+   - Smooth fade-in animation
+
+4. **Magnetic Button** (`MagneticButton`):
+   - Follows mouse cursor
+   - Smooth magnetic pull effect
+
+5. **Glow Card** (`GlowCard`):
+   - Animated glow border
+   - Color transitions
+
+6. **Shiny Button** (`ShinyButton`):
+   - Shimmer effect
+   - Gradient background
+
+7. **Ripple Button** (`RippleButton`):
+   - Ripple effect on click
+   - Wave animation
+
+8. **Scroll Progress** (`ScrollProgress`):
+   - Top progress bar
+   - Gradient fill
+   - Smooth updates
+
+9. **Particle Background** (`ParticleBackground`):
+   - Animated particles
+   - Low opacity
+   - Smooth movement
+
+10. **Spotlight** (`Spotlight`):
+    - Dynamic spotlight effect
+    - Follows scroll/mouse
+    - Radial gradient
+
+---
+
+## Animations & Interactions
+
+### Scroll Animations
+- **Framer Motion**: `whileInView` for scroll-triggered animations
+- **Viewport**: `once: true, margin: "-100px"`
+- **Stagger**: Children animate with delay (0.05s-0.1s intervals)
+- **Transitions**: Spring physics, duration 0.5-0.6s
+
+### Hover Effects
+- **Scale**: `1.05-1.1` on hover
+- **Lift**: `y: -2` to `y: -5` translate
+- **Glow**: Border color change, background gradient overlay
+- **Rotate**: Icons rotate 360° on hover (0.5s)
+
+### Page Load Animations
+- **Container**: Stagger children
+- **Items**: Fade in + slide up (`opacity: 0, y: 20` → `opacity: 1, y: 0`)
+- **Delays**: Progressive delays for sequential appearance
+
+### Interactive Elements
+- **Buttons**: Scale on tap (`whileTap: { scale: 0.95 }`)
+- **Links**: Color transitions, icon translations
+- **Cards**: 3D tilt, glow on hover
+- **Form Inputs**: Focus ring, border color change
+
+---
+
+## Technical Stack
+
+### Core Technologies
+- **Framework**: Next.js 16 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS 4
+- **Animations**: Framer Motion
+- **Icons**: Lucide React
+- **Package Manager**: pnpm
+
+### Key Dependencies
+- `framer-motion`: Animations
+- `lucide-react`: Icons
+- `date-fns`: Date formatting
+- `class-variance-authority`: Component variants
+- `clsx` & `tailwind-merge`: Class utilities
+
+### Data Management
+- **Static Data**: `lib/data.ts` (personal info, experience, skills, certifications, education)
+- **GitHub Integration**: `lib/github.ts` (fetch repositories)
+- **TypeScript Types**: `types/index.ts`
+
+---
+
+## Responsive Design
+
+### Breakpoints
+- **Mobile**: Default (< 768px)
+- **Tablet**: `md:` (≥ 768px)
+- **Desktop**: `lg:` (≥ 1024px)
+
+### Responsive Patterns
+- **Grids**: `grid-cols-1 md:grid-cols-2 lg:grid-cols-3`
+- **Text**: `text-4xl md:text-5xl lg:text-6xl`
+- **Padding**: `px-4 md:px-6 lg:px-8`
+- **Spacing**: `gap-4 md:gap-6 lg:gap-8`
+
+### Mobile Optimizations
+- Single column layouts
+- Reduced padding/spacing
+- Touch-friendly button sizes
+- Simplified animations
+
+---
+
+## Accessibility Features
+
+- **Focus States**: Visible outline on focus-visible
+- **Semantic HTML**: Proper heading hierarchy, section tags
+- **ARIA Labels**: On icon-only buttons
+- **Keyboard Navigation**: All interactive elements accessible
+- **Color Contrast**: WCAG compliant text colors
+- **Smooth Scrolling**: `scroll-behavior: smooth`
+
+---
+
+## Performance Optimizations
+
+- **Lazy Loading**: Components load on scroll
+- **Image Optimization**: Next.js Image component (if used)
+- **Code Splitting**: Automatic with Next.js
+- **Animation Performance**: `will-change` properties
+- **Reduced Motion**: Respects user preferences
+
+---
+
+## Custom Styling Details
+
+### Gradient Text Class
+.gradient-text {
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradient-shift 5s ease infinite;
+}### Custom Scrollbar
+- Width: 8px
+- Track: Background color
+- Thumb: Gradient (blue → purple → pink)
+- Rounded corners
+
+### Selection Color
+- Background: `rgba(59, 130, 246, 0.3)`
+- Text: White
+
+---
+
+## Section-Specific Requirements
+
+### Certifications Section (Detailed)
+- **Grid Layout**: Responsive 3-column
+- **Card Structure**:
+  1. PDF Preview Area (if available):
+     - Colored header matching issuer
+     - File icon with animation
+     - "Click to view" text
+     - PDF badge
+  2. Content Area:
+     - Issuer badge (colored icon container)
+     - Certificate title
+     - Date with calendar icon
+  3. Actions Footer:
+     - View Certificate link (external)
+     - Download PDF button
+- **Color Themes**: Issuer-specific color schemes
+- **Interactions**: 
+  - PDF opens in new tab
+  - Hover effects on all elements
+  - 3D card tilt
+
+### Projects Section
+- **GitHub Integration**: Auto-fetch repositories
+- **Sorting**: By stars + forks (descending)
+- **Display**: 
+  - Project name
+  - Description (or placeholder)
+  - Stats (stars, forks)
+  - Primary language badge
+  - Topics (max 4)
+  - Links (homepage, GitHub)
+- **Loading States**: Skeleton cards
+
+---
+
+## Implementation Notes
+
+1. **No Sidebar**: All navigation is through smooth scrolling
+2. **Section IDs**: Each section has `id` for anchor links
+3. **Scroll Behavior**: Smooth scroll between sections
+4. **Background Effects**: Fixed position, z-index layering
+5. **Component Structure**: Modular, reusable components
+6. **Data-Driven**: All content from `lib/data.ts`
+7. **Type Safety**: Full TypeScript coverage
+
+---
+
+## Final Design Principles
+
+- **Dark Theme**: Professional dark aesthetic
+- **Modern UI**: Glass morphism, gradients, 3D effects
+- **Smooth Animations**: Framer Motion throughout
+- **Interactive**: Hover effects, magnetic buttons, 3D cards
+- **Responsive**: Mobile-first, scales to all devices
+- **Performance**: Optimized animations, lazy loading
+- **Accessibility**: WCAG compliant, keyboard navigation
+- **Clean Code**: TypeScript, modular components, reusable UI
+
+---
+
+**Note**: This prompt is designed to be transferred to another project. All design concepts, component structures, and implementation details are documented above. The portfolio uses a single-page vertical layout with NO sidebar navigation - all sections flow smoothly with scroll-based navigation.

@@ -148,7 +148,6 @@ export const skills: Skill[] = [
   { name: "Swift", category: "mobile", level: 60 },
   // Tools
   { name: "Git/Github", category: "tools", level: 90 },
-  { name: "Firebase", category: "tools", level: 75 },
   { name: "Supabase", category: "tools", level: 75 },
   { name: "Oracle", category: "tools", level: 70 },
   { name: "Figma", category: "tools", level: 75 },
