@@ -64,8 +64,13 @@ This message was sent from your portfolio website contact form.
       `,
     });
 
+    // Check if email was sent successfully
+    if (data.error) {
+      throw new Error(data.error.message || "Failed to send email");
+    }
+
     return NextResponse.json(
-      { success: true, message: "Email sent successfully", id: data.id },
+      { success: true, message: "Email sent successfully", id: data.data?.id },
       { status: 200 }
     );
   } catch (error: any) {
