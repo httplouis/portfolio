@@ -22,6 +22,8 @@ export const customProjectDetails: Record<string, ProjectDetails> = {
     images: [
       "/projects/travi-link/travelink-logo.png", // Logo preview image
       "/projects/travi-link/1.png", // App screenshot
+      "/projects/travi-link/admin travelink.png",
+      "/projects/travi-link/dashboard.png",
     ],
     briefDescription: "Campus transport management system for MSEUF with automated travel order requests and multi-level approval workflows.",
     longDescription: `Travelink is a web application for scheduling and tracking campus transport services at Manuel S. Enverga University Foundation (MSEUF). It digitizes and automates travel order requests, vehicle scheduling, driver management, and multi-level approval workflows.
@@ -140,6 +142,8 @@ Experience luxury and comfort with our premium fleet of vehicles. Whether you're
     images: [
       "/projects/travi-link/travelink-logo.png", // Logo preview image
       "/projects/travi-link/1.png", // App screenshot
+      "/projects/travi-link/admin travelink.png",
+      "/projects/travi-link/dashboard.png",
     ],
     briefDescription: "Campus transport management system for MSEUF with automated travel order requests and multi-level approval workflows.",
     longDescription: `Travelink is a web application for scheduling and tracking campus transport services at Manuel S. Enverga University Foundation (MSEUF). It digitizes and automates travel order requests, vehicle scheduling, driver management, and multi-level approval workflows.`,
@@ -164,6 +168,8 @@ Experience luxury and comfort with our premium fleet of vehicles. Whether you're
     images: [
       "/projects/travi-link/travelink-logo.png", // Logo preview image
       "/projects/travi-link/1.png", // App screenshot
+      "/projects/travi-link/admin travelink.png",
+      "/projects/travi-link/dashboard.png",
     ],
     briefDescription: "Campus transport management system for MSEUF with automated travel order requests and multi-level approval workflows.",
     longDescription: `Travelink is a web application for scheduling and tracking campus transport services at Manuel S. Enverga University Foundation (MSEUF). It digitizes and automates travel order requests, vehicle scheduling, driver management, and multi-level approval workflows.`,
@@ -268,6 +274,16 @@ Experience luxury and comfort with our premium fleet of vehicles. Whether you're
     images: [
       "/projects/alamat/alamat-logo.png", // Logo preview image
       "/projects/alamat/1.png", // App screenshot
+      "/projects/alamat/2.png",
+      "/projects/alamat/3.png",
+      "/projects/alamat/4.png",
+      "/projects/alamat/5.png",
+      "/projects/alamat/6.png",
+      "/projects/alamat/7.png",
+      "/projects/alamat/8.png",
+      "/projects/alamat/9.png",
+      "/projects/alamat/10.png",
+      "/projects/alamat/11.png",
     ],
     briefDescription: "Interactive map platform exploring Philippine legends and cultural heritage through geolocated stories and immersive experiences.",
     longDescription: `Alamat is an interactive web application that explores the mysteries and legends of the Philippines through interactive maps and captivating stories. The platform features geolocated legends, cultural heritage information, and an engaging user experience.`,
@@ -397,8 +413,8 @@ This project was developed as part of a course (M065-ITWM105) and represents my 
       "/projects/plana/planalogo.png", // Logo preview image
       "/projects/plana/1.png", // App screenshot
     ],
-    briefDescription: "A featured project showcasing innovative solutions and modern development practices.",
-    longDescription: `Plana is a featured project that demonstrates modern web development practices and innovative solutions. This project showcases proficiency in various technologies and best practices in software development.`,
+    briefDescription: "Personal planner mobile app for organizing tasks, schedules, and daily activities with an intuitive and modern interface.",
+    longDescription: `Plana is a personal planner mobile application designed to help users organize their tasks, schedules, and daily activities. The app provides an intuitive and modern interface for managing personal productivity and staying organized.`,
     features: [
       // Add project features here
     ],
@@ -407,6 +423,99 @@ This project was developed as part of a course (M065-ITWM105) and represents my 
       backend: [],
     },
     targetUsers: []
+  },
+  "barberque": {
+    images: [
+      "/projects/barberque/BarberQue-logo.png",
+      "/projects/barberque/barberque1.png",
+      "/projects/barberque/Screenshot 2025-12-09 041518.png",
+      "/projects/barberque/1.png",
+    ],
+    briefDescription: "Microservices-based barber shop management platform with real-time queue tracking, appointment booking, and analytics dashboard.",
+    longDescription: `Barber Queuing System is a production-ready microservices-based platform for managing barber shop operations. Built with 8 independent microservices communicating via REST APIs and Kafka, the system supports both appointment booking and walk-in queues with real-time updates and notifications.
+
+**System Architecture:**
+- Booking Service (Port 8000) - Handles appointments and queue entries
+- Client Service (Port 8001) - User authentication with JWT
+- Feedback Service (Port 8002) - Customer feedback management
+- Notification Service (Port 8003) - Real-time notifications
+- Barber Service (Port 8004) - Barber and service management
+- Admin Service (Port 8005) - Administrative operations
+- Analytics Service (Port 8006) - Analytics and reporting
+- Queue Service - Kafka consumer for queue processing
+
+**Client Applications:**
+- GUI Client - CustomTkinter interface for customers
+- Admin Dashboard - Administrative interface for shop management
+
+**Key Features:**
+Production-ready with data persistence, JWT authentication, structured logging, rate limiting, health checks, error handling, testing framework, and real-time queue tracking.`,
+    features: [
+      "Microservices Architecture: 8 independent services (Booking, Client, Feedback, Notification, Barber, Admin, Analytics, Queue Processor) communicating via REST APIs and Kafka for horizontal scalability",
+      "Dual Booking System: Supports both scheduled appointment booking and walk-in queue management with real-time availability updates",
+      "Real-Time Queue Tracking: Live updates for queue positions, estimated wait times, and instant notifications when it's the customer's turn",
+      "JWT Authentication: Secure user authentication with JSON Web Tokens, role-based access control, and session management",
+      "Admin Dashboard: Comprehensive administrative interface with analytics, queue management, barber scheduling, service management, and detailed reporting",
+      "Analytics Service: Performance metrics dashboard with business insights, customer analytics, barber performance tracking, and revenue reporting",
+      "Event-Driven Communication: Kafka-based event-driven architecture enabling asynchronous processing, service decoupling, and reliable message delivery",
+      "Modern GUI Client: CustomTkinter interface for customers with intuitive design, queue visualization, appointment scheduling, and profile management",
+      "Data Persistence: Atomic writes ensuring data consistency and persistence across service restarts with reliable storage mechanisms",
+      "Security Features: Rate limiting to prevent abuse, input sanitization to prevent injection attacks, and comprehensive error handling with proper logging",
+      "Health Checks: Monitoring endpoints and health checks for all services enabling proactive issue detection and system reliability",
+      "Production-Ready Infrastructure: Structured logging for debugging and auditing, retry logic for resilience, and comprehensive testing framework for quality assurance",
+      "Feedback Management: Customer feedback collection system allowing ratings, reviews, and service improvement insights",
+      "Notification System: Multi-channel notification system for queue updates, appointment reminders, and system alerts"
+    ],
+    technologyStack: {
+      frontend: ["CustomTkinter", "Python GUI", "Tkinter"],
+      backend: ["Python", "Microservices Architecture", "REST APIs", "Flask/FastAPI"],
+      authentication: ["JWT (JSON Web Tokens)", "Token-based authentication", "Role-based access control"],
+      realTime: ["Apache Kafka", "Event streaming", "Real-time notifications", "Queue processing", "Message queues"],
+      additional: ["Event-driven architecture", "Data persistence", "Analytics and reporting", "Rate limiting", "Health checks", "Testing framework (pytest)", "Structured logging", "Error handling and retry logic"]
+    },
+    targetUsers: [
+      "Barber shop owners",
+      "Barbers and stylists",
+      "Customers",
+      "Shop administrators",
+      "Business managers",
+      "Queue coordinators"
+    ]
+  },
+  "barber-que": {
+    images: [
+      "/projects/barberque/1.png",
+    ],
+    briefDescription: "Microservices-based barber shop management platform with real-time queue tracking, appointment booking, and analytics dashboard.",
+    longDescription: `Barber Queuing System is a production-ready, microservices-based platform designed for managing barber shop operations efficiently. The system is built with eight independent microservices that communicate via REST APIs and Apache Kafka, enabling scalable and resilient operations.
+
+The platform supports both appointment booking and walk-in queue management, providing real-time updates and notifications to customers and barbers. The admin dashboard offers comprehensive analytics, queue management, barber management, and detailed reporting capabilities.`,
+    features: [
+      "Microservices Architecture: 8 independent services communicating via REST APIs and Kafka for scalability",
+      "Dual Booking System: Supports both scheduled appointment booking and walk-in queue management",
+      "Real-Time Queue Tracking: Live updates for queue positions and notifications",
+      "JWT Authentication: Secure user authentication with role-based access control",
+      "Admin Dashboard: Comprehensive administrative interface with analytics and reporting",
+      "Event-Driven Communication: Kafka-based event-driven architecture",
+      "Analytics Service: Performance metrics and business insights",
+      "Modern GUI Client: CustomTkinter interface for customers",
+      "Data Persistence: Reliable data storage across service restarts",
+      "Security Features: Rate limiting, input sanitization, and error handling"
+    ],
+    technologyStack: {
+      frontend: ["CustomTkinter", "Python GUI"],
+      backend: ["Python", "Microservices Architecture", "REST APIs"],
+      authentication: ["JWT (JSON Web Tokens)"],
+      realTime: ["Apache Kafka", "Real-time notifications", "Queue processing"],
+      additional: ["Event-driven architecture", "Data persistence", "Analytics", "Rate limiting", "Health checks"]
+    },
+    targetUsers: [
+      "Barber shop owners",
+      "Barbers and stylists",
+      "Customers",
+      "Shop administrators",
+      "Business managers"
+    ]
   },
   // Add more projects here following the same format
 };

@@ -41,6 +41,10 @@ function getProjectBackgroundColor(slug: string): string {
     return 'bg-gradient-to-br from-blue-800 via-purple-800 to-indigo-900'; // Dark blue-purple gradient
   }
   
+  if (lowerSlug.includes('barber')) {
+    return 'bg-gradient-to-br from-gray-800 via-gray-900 to-black'; // Dark professional gradient for barber
+  }
+  
   // Default gradient
   return 'bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20';
 }
@@ -234,6 +238,9 @@ export default function ProjectDetailPage() {
     }
     if (lowerSlug.includes("drive") && lowerSlug.includes("abi")) {
       variations.push("drive-abi", "drive_abi", "driveabi");
+    }
+    if (lowerSlug.includes("barber")) {
+      variations.push("barberque", "barber-que", "barber_que", "barber-queue", "barberqueue");
     }
     
     for (const variation of variations) {
@@ -688,27 +695,62 @@ export default function ProjectDetailPage() {
                   >
                     <h3 className="text-xl font-bold text-white mb-4">Technologies</h3>
                     <div className="flex flex-wrap gap-2">
-                      {repo.language && (() => {
-                        const languageIcon = getSkillIcon(repo.language);
-                        return (
-                          <span className="px-3 py-1.5 rounded-lg text-sm bg-gradient-to-r from-blue-500/20 to-blue-600/10 text-blue-400 border border-blue-500/30 flex items-center gap-2">
-                            {languageIcon && <span>{languageIcon}</span>}
-                            <span>{repo.language}</span>
-                          </span>
-                        );
-                      })()}
-                      {repo.topics.map((topic, i) => {
-                        const topicIcon = getSkillIcon(topic);
-                        return (
-                          <span
-                            key={i}
-                            className="px-3 py-1.5 rounded-lg text-sm bg-gradient-to-r from-purple-500/20 to-purple-600/10 text-purple-400 border border-purple-500/30 flex items-center gap-2"
-                          >
-                            {topicIcon && <span>{topicIcon}</span>}
-                            <span>{topic}</span>
-                          </span>
-                        );
-                      })}
+                      {/* Show custom technology stack if available, otherwise show GitHub data */}
+                      {customDetails.technologyStack ? (
+                        <>
+                          {customDetails.technologyStack.frontend?.map((tech, i) => {
+                            const techIcon = getSkillIcon(tech);
+                            return (
+                              <span key={`frontend-${i}`} className="px-3 py-1.5 rounded-lg text-sm bg-gradient-to-r from-blue-500/20 to-blue-600/10 text-blue-400 border border-blue-500/30 flex items-center gap-2">
+                                {techIcon && <span>{techIcon}</span>}
+                                <span>{tech}</span>
+                              </span>
+                            );
+                          })}
+                          {customDetails.technologyStack.backend?.map((tech, i) => {
+                            const techIcon = getSkillIcon(tech);
+                            return (
+                              <span key={`backend-${i}`} className="px-3 py-1.5 rounded-lg text-sm bg-gradient-to-r from-purple-500/20 to-purple-600/10 text-purple-400 border border-purple-500/30 flex items-center gap-2">
+                                {techIcon && <span>{techIcon}</span>}
+                                <span>{tech}</span>
+                              </span>
+                            );
+                          })}
+                          {customDetails.technologyStack.realTime?.slice(0, 3).map((tech, i) => {
+                            const techIcon = getSkillIcon(tech);
+                            return (
+                              <span key={`realtime-${i}`} className="px-3 py-1.5 rounded-lg text-sm bg-gradient-to-r from-yellow-500/20 to-yellow-600/10 text-yellow-400 border border-yellow-500/30 flex items-center gap-2">
+                                {techIcon && <span>{techIcon}</span>}
+                                <span>{tech}</span>
+                              </span>
+                            );
+                          })}
+                        </>
+                      ) : (
+                        <>
+                          {repo.language && (() => {
+                            const languageIcon = getSkillIcon(repo.language);
+                            return (
+                              <span className="px-3 py-1.5 rounded-lg text-sm bg-gradient-to-r from-blue-500/20 to-blue-600/10 text-blue-400 border border-blue-500/30 flex items-center gap-2">
+                                {languageIcon && <span>{languageIcon}</span>}
+                                <span>{repo.language}</span>
+                              </span>
+                            );
+                          })()}
+                          {repo.topics.map((topic, i) => {
+                            const topicIcon = getSkillIcon(topic);
+                            return (
+                              <span
+                                key={i}
+                                className="px-3 py-1.5 rounded-lg text-sm bg-gradient-to-r from-purple-500/20 to-purple-600/10 text-purple-400 border border-purple-500/30 flex items-center gap-2"
+                              >
+                                {topicIcon && <span>{topicIcon}</span>}
+                                <span>{topic}</span>
+                              </span>
+                            );
+                          })}
+                        </>
+                      )}
                     </div>
                   </motion.div>
 

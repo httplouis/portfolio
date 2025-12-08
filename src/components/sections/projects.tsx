@@ -51,6 +51,10 @@ function getProjectBackgroundColor(repoName: string): string {
     return 'bg-gradient-to-br from-blue-800 via-purple-800 to-indigo-900'; // Dark blue-purple gradient
   }
   
+  if (lowerName.includes('barber')) {
+    return 'bg-gradient-to-br from-gray-800 via-gray-900 to-black'; // Dark professional gradient for barber
+  }
+  
   // Default gradient
   return 'bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20';
 }
@@ -235,6 +239,9 @@ export function Projects() {
                 if (lowerName.includes("drive") && lowerName.includes("abi")) {
                   variations.push("drive-abi", "drive_abi", "driveabi");
                 }
+                if (lowerName.includes("barber")) {
+                  variations.push("barberque", "barber-que", "barber_que", "barber-queue", "barberqueue");
+                }
                 
                 for (const variation of variations) {
                   if (customProjectDetails[variation]) {
@@ -288,7 +295,7 @@ export function Projects() {
                     />
 
                     {/* Project Preview Image */}
-                    <div className={`relative w-full h-48 overflow-hidden ${getProjectBackgroundColor(repo.name)}`}>
+                    <div className={`relative w-full h-48 overflow-hidden rounded-t-2xl ${getProjectBackgroundColor(repo.name)}`}>
                       {customImage ? (
                         /* Preview image (logo) - no cropping, use object-contain */
                         <div className="relative w-full h-full">
@@ -316,8 +323,10 @@ export function Projects() {
                           }}
                         />
                       )}
-                      {/* Gradient overlay for better text readability */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-transparent to-transparent opacity-70" />
+                      {/* Gradient overlay for better text readability - only for non-custom images */}
+                      {!customImage && (
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a1a] via-transparent to-transparent opacity-70" />
+                      )}
                       {/* Fallback gradient pattern if image fails */}
                       <div className="absolute inset-0 bg-gradient-to-br from-blue-500/30 via-purple-500/30 to-pink-500/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                     </div>
