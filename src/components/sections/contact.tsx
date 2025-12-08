@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Phone, MapPin, Github, Linkedin, Send } from "lucide-react";
+import { Mail, Phone, MapPin, Github, Linkedin, Send, CheckCircle, XCircle } from "lucide-react";
 import { personalInfo } from "@/lib/data";
 import { GradientText } from "@/components/ui/gradient-text";
 import { Card } from "@/components/ui/card";
@@ -15,16 +15,48 @@ export function Contact() {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"success" | "error" | null>(null);
+  const [statusMessage, setStatusMessage] = useState("");
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      alert("Thank you for your message! I'll get back to you soon.");
+    setSubmitStatus(null);
+    setStatusMessage("");
+
+    try {
+      // Send email using Resend API route
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to send message");
+      }
+
+      setSubmitStatus("success");
+      setStatusMessage("Thank you for your message! I'll get back to you soon.");
       setFormData({ name: "", email: "", message: "" });
-    }, 1000);
+    } catch (error: any) {
+      console.error("Error sending email:", error);
+      setSubmitStatus("error");
+      setStatusMessage(
+        error.message || "Failed to send message. Please try again or contact me directly via email."
+      );
+    } finally {
+      setIsSubmitting(false);
+      // Clear status message after 5 seconds
+      setTimeout(() => {
+        setSubmitStatus(null);
+        setStatusMessage("");
+      }, 5000);
+    }
   };
 
   return (
@@ -186,14 +218,35 @@ export function Contact() {
                     placeholder="Your message..."
                   />
                 </div>
+                {/* Status Message */}
+                {submitStatus && (
+                  <div
+                    className={`p-4 rounded-lg flex items-center gap-3 ${
+                      submitStatus === "success"
+                        ? "bg-green-500/20 border border-green-500/50 text-green-400"
+                        : "bg-red-500/20 border border-red-500/50 text-red-400"
+                    }`}
+                  >
+                    {submitStatus === "success" ? (
+                      <CheckCircle className="w-5 h-5" />
+                    ) : (
+                      <XCircle className="w-5 h-5" />
+                    )}
+                    <p className="text-sm">{statusMessage}</p>
+                  </div>
+                )}
+
                 <Button
                   type="submit"
                   size="lg"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white"
+                  className="w-full bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
-                    "Sending..."
+                    <>
+                      <div className="w-4 h-4 mr-2 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                      Sending...
+                    </>
                   ) : (
                     <>
                       <Send className="w-4 h-4 mr-2" />
