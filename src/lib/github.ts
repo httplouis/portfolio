@@ -29,7 +29,7 @@ export async function fetchGitHubRepos(username: string): Promise<GitHubRepo[]> 
     return repos
       .filter((repo) => !repo.fork)
       .sort((a, b) => (b.stargazers_count + b.forks_count) - (a.stargazers_count + a.forks_count))
-      .slice(0, 12); // Top 12 projects
+      .slice(0, 12); //  Top 12 projects
   } catch (error) {
     console.error("Error fetching GitHub repos:", error);
     return [];

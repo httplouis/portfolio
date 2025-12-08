@@ -49,3 +49,5 @@ build/
 # other
 *.log
 .DS_Store
+
+.vercel
