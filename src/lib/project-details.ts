@@ -20,8 +20,8 @@ export interface ProjectDetails {
 export const customProjectDetails: Record<string, ProjectDetails> = {
   "travi-link": {
     images: [
-      "/projects/travi-link/1.png",
-      // Add more images: /projects/travi-link/2.png, 3.png, etc.
+      "/projects/travi-link/travelink-logo.png", // Logo preview image
+      "/projects/travi-link/1.png", // App screenshot
     ],
     briefDescription: "Campus transport management system for MSEUF with automated travel order requests and multi-level approval workflows.",
     longDescription: `Travelink is a web application for scheduling and tracking campus transport services at Manuel S. Enverga University Foundation (MSEUF). It digitizes and automates travel order requests, vehicle scheduling, driver management, and multi-level approval workflows.
@@ -57,8 +57,8 @@ The system streamlines the entire process from initial request submission to fin
   },
   "drive-abi": {
     images: [
-      "/projects/drive-abi/1.png",
-      // Add more images: /projects/drive-abi/2.png, 3.png, etc.
+      "/projects/drive-abi/driveabi-logo.png", // Logo preview image
+      "/projects/drive-abi/1.png", // App screenshot
     ],
     briefDescription: "Modern car rental and sales platform with premium fleet management and seamless booking experience.",
     longDescription: `Drive.Abi is a modern car rental and sales platform designed to provide users with a seamless experience in renting or purchasing vehicles. The platform features a sleek, dark-themed interface with premium fleet management and user-friendly booking systems.
@@ -89,7 +89,8 @@ Experience luxury and comfort with our premium fleet of vehicles. Whether you're
   // Alternative repo name formats
   "driveabi": {
     images: [
-      "/projects/drive-abi/1.png",
+      "/projects/drive-abi/driveabi-logo.png", // Logo preview image
+      "/projects/drive-abi/1.png", // App screenshot
     ],
     briefDescription: "Modern car rental and sales platform with premium fleet management and seamless booking experience.",
     longDescription: `Drive.Abi is a modern car rental and sales platform designed to provide users with a seamless experience in renting or purchasing vehicles. The platform features a sleek, dark-themed interface with premium fleet management and user-friendly booking systems.`,
@@ -112,7 +113,8 @@ Experience luxury and comfort with our premium fleet of vehicles. Whether you're
   },
   "drive_abi": {
     images: [
-      "/projects/drive-abi/1.png",
+      "/projects/drive-abi/driveabi-logo.png", // Logo preview image
+      "/projects/drive-abi/1.png", // App screenshot
     ],
     briefDescription: "Modern car rental and sales platform with premium fleet management and seamless booking experience.",
     longDescription: `Drive.Abi is a modern car rental and sales platform designed to provide users with a seamless experience in renting or purchasing vehicles. The platform features a sleek, dark-themed interface with premium fleet management and user-friendly booking systems.`,
@@ -136,7 +138,8 @@ Experience luxury and comfort with our premium fleet of vehicles. Whether you're
   // Alternative repo name formats for Travelink
   "travelink": {
     images: [
-      "/projects/travi-link/1.png",
+      "/projects/travi-link/travelink-logo.png", // Logo preview image
+      "/projects/travi-link/1.png", // App screenshot
     ],
     briefDescription: "Campus transport management system for MSEUF with automated travel order requests and multi-level approval workflows.",
     longDescription: `Travelink is a web application for scheduling and tracking campus transport services at Manuel S. Enverga University Foundation (MSEUF). It digitizes and automates travel order requests, vehicle scheduling, driver management, and multi-level approval workflows.`,
@@ -159,7 +162,8 @@ Experience luxury and comfort with our premium fleet of vehicles. Whether you're
   },
   "trave-link": {
     images: [
-      "/projects/travi-link/1.png",
+      "/projects/travi-link/travelink-logo.png", // Logo preview image
+      "/projects/travi-link/1.png", // App screenshot
     ],
     briefDescription: "Campus transport management system for MSEUF with automated travel order requests and multi-level approval workflows.",
     longDescription: `Travelink is a web application for scheduling and tracking campus transport services at Manuel S. Enverga University Foundation (MSEUF). It digitizes and automates travel order requests, vehicle scheduling, driver management, and multi-level approval workflows.`,
@@ -174,8 +178,9 @@ Experience luxury and comfort with our premium fleet of vehicles. Whether you're
   },
   "travi-link-mobile": {
     images: [
-      "/projects/travi-link-mobile/2.png",
-      // Add more images: /projects/travi-link-mobile/1.png, 3.png, etc.
+      "/projects/travi-link-mobile/logo.png", // Logo preview image
+      "/projects/travi-link-mobile/1.png", // App screenshot
+      "/projects/travi-link-mobile/2.png", // App screenshot
     ],
     briefDescription: "Cross-platform mobile app for Travelink with real-time notifications and offline access to transportation requests.",
     longDescription: `TraveLink Mobile is a cross-platform mobile application built with React Native (Expo), TypeScript, and Supabase. It provides faculty and staff with a mobile interface to view their transportation requests, track approval status, view their schedule, and receive real-time notifications.`,
@@ -201,7 +206,9 @@ Experience luxury and comfort with our premium fleet of vehicles. Whether you're
   // Alternative repo name formats for Travelink Mobile
   "travilink-mobile": {
     images: [
-      "/projects/travi-link-mobile/2.png",
+      "/projects/travi-link-mobile/logo.png", // Logo preview image
+      "/projects/travi-link-mobile/1.png", // App screenshot
+      "/projects/travi-link-mobile/2.png", // App screenshot
     ],
     briefDescription: "Cross-platform mobile app for Travelink with real-time notifications and offline access to transportation requests.",
     longDescription: `TraveLink Mobile is a cross-platform mobile application built with React Native (Expo), TypeScript, and Supabase. It provides faculty and staff with a mobile interface to view their transportation requests, track approval status, view their schedule, and receive real-time notifications.`,
@@ -221,7 +228,9 @@ Experience luxury and comfort with our premium fleet of vehicles. Whether you're
   },
   "trave-link-mobile": {
     images: [
-      "/projects/travi-link-mobile/2.png",
+      "/projects/travi-link-mobile/logo.png", // Logo preview image
+      "/projects/travi-link-mobile/1.png", // App screenshot
+      "/projects/travi-link-mobile/2.png", // App screenshot
     ],
     briefDescription: "Cross-platform mobile app for Travelink with real-time notifications and offline access to transportation requests.",
     longDescription: `TraveLink Mobile is a cross-platform mobile application built with React Native (Expo), TypeScript, and Supabase. It provides faculty and staff with a mobile interface to view their transportation requests, track approval status, view their schedule, and receive real-time notifications.`,
@@ -241,7 +250,9 @@ Experience luxury and comfort with our premium fleet of vehicles. Whether you're
   },
   "travi_link_mobile": {
     images: [
-      "/projects/travi-link-mobile/2.png",
+      "/projects/travi-link-mobile/logo.png", // Logo preview image
+      "/projects/travi-link-mobile/1.png", // App screenshot
+      "/projects/travi-link-mobile/2.png", // App screenshot
     ],
     longDescription: `TraveLink Mobile is a cross-platform mobile application built with React Native (Expo), TypeScript, and Supabase.`,
     features: [
@@ -255,13 +266,141 @@ Experience luxury and comfort with our premium fleet of vehicles. Whether you're
   },
   "alamat": {
     images: [
-      "/projects/alamat/1.png",
-      // Add more images: /projects/alamat/2.png, 3.png, etc.
+      "/projects/alamat/alamat-logo.png", // Logo preview image
+      "/projects/alamat/1.png", // App screenshot
     ],
     briefDescription: "Interactive map platform exploring Philippine legends and cultural heritage through geolocated stories and immersive experiences.",
     longDescription: `Alamat is an interactive web application that explores the mysteries and legends of the Philippines through interactive maps and captivating stories. The platform features geolocated legends, cultural heritage information, and an engaging user experience.`,
     features: [
       // Add your project features here
+    ],
+    technologyStack: {
+      frontend: [],
+      backend: [],
+    },
+    targetUsers: []
+  },
+  "sarap.io": {
+    images: [
+      "/projects/sarapio/sarapio-logo.png", // Logo preview image
+      "/projects/sarapio/1.png", // App screenshot
+    ],
+    briefDescription: "Recipe application with extensive recipe collection, social interaction, AI chatbot assistance, and voice read-aloud functionality for hands-free cooking.",
+    longDescription: `Sarap.io is a recipe application designed to provide users with an extensive collection of recipes, social interaction, and personalized cooking assistance. The app connects to a Supabase backend for database storage and integrates TheMealDB API to fetch recipes dynamically. It features an AI chatbot that aids users in searching recipes via keywords with a fallback mechanism if the API fails. The app enhances user experience by reading recipes aloud with adjustable voice speed, allowing hands-free operation. It also includes a social media feed for users to share and explore recipes from others, a profile page for user statistics, and settings for customization.
+
+The app covers core functionalities such as viewing and managing a personal recipe collection, searching and fetching external recipes from TheMealDB API, AI chatbot for recipe search with keyword-based fallback, voice read-aloud functionality when viewing recipes and ingredients, social feed to upload and view recipes from other users, user profile with stats and customization options, notification system, and ability to add new recipes.
+
+This project was developed as part of a course (M065-ITWM105) and represents my first iOS application built with SwiftUI. The experience provided hands-on learning with ObservableObject for data management, API integration, and real-time database connectivity with Supabase.`,
+    features: [
+      "Home Screen / Recipe List: Displays a list of available recipes with search and filtering options such as under 30 minutes, vegetarian, favorites, region, and cuisine tags",
+      "Recipe Detail View: Shows detailed recipe information including ingredients, cooking steps, photos, and interactive favorite/unfavorite buttons",
+      "AI Chatbot Screen: Enables users to type recipe-related questions like 'how to cook adobo', triggering either an API fetch or keyword-based responses displaying relevant recipes",
+      "Voice Read Aloud Feature: When viewing recipe ingredients or steps, the app reads the text aloud with adjustable speed, enhancing hands-free cooking convenience",
+      "Social Feed Screen: Users can scroll through posts with images, captions, likes, comments, and ratings shared by other users, with an option to add a new post",
+      "Profile Page: Displays user statistics such as number of recipes added, followers, and following count with user profile picture",
+      "Settings Page: Allows users to customize app preferences including the speed of voice read aloud",
+      "Add Recipe Screen: Form where users can input new recipes including title, ingredients, steps, cooking time, cuisine, and upload photos",
+      "Search Recipes: Lets users search for recipes by sending queries to TheMealDB API, providing a variety of recipes from different cuisines with images and basic info",
+      "Notification System: Notifies users about relevant app updates or social interactions"
+    ],
+    technologyStack: {
+      frontend: ["SwiftUI", "Swift"],
+      backend: ["Supabase (PostgreSQL)", "TheMealDB API"],
+      authentication: ["Supabase Auth"],
+      realTime: ["Supabase Realtime"],
+      additional: ["AI Chatbot (keyword-based)", "Text-to-Speech", "iOS App Development", "ObservableObject for state management"]
+    },
+    targetUsers: [
+      "Home cooks",
+      "Cooking enthusiasts",
+      "Recipe collectors",
+      "Social recipe sharers",
+      "iOS users",
+      "People who prefer hands-free cooking"
+    ]
+  },
+  "sarapio": {
+    images: [
+      "/projects/sarapio/sarapio-logo.png", // Logo preview image
+      "/projects/sarapio/1.png", // App screenshot
+    ],
+    briefDescription: "Recipe application with extensive recipe collection, social interaction, AI chatbot assistance, and voice read-aloud functionality for hands-free cooking.",
+    longDescription: `Sarap.io is a recipe application designed to provide users with an extensive collection of recipes, social interaction, and personalized cooking assistance. The app connects to a Supabase backend for database storage and integrates TheMealDB API to fetch recipes dynamically. It features an AI chatbot that aids users in searching recipes via keywords with a fallback mechanism if the API fails. The app enhances user experience by reading recipes aloud with adjustable voice speed, allowing hands-free operation. It also includes a social media feed for users to share and explore recipes from others, a profile page for user statistics, and settings for customization.
+
+The app covers core functionalities such as viewing and managing a personal recipe collection, searching and fetching external recipes from TheMealDB API, AI chatbot for recipe search with keyword-based fallback, voice read-aloud functionality when viewing recipes and ingredients, social feed to upload and view recipes from other users, user profile with stats and customization options, notification system, and ability to add new recipes.
+
+This project was developed as part of a course (M065-ITWM105) and represents my first iOS application built with SwiftUI. The experience provided hands-on learning with ObservableObject for data management, API integration, and real-time database connectivity with Supabase.`,
+    features: [
+      "Home Screen / Recipe List: Displays a list of available recipes with search and filtering options such as under 30 minutes, vegetarian, favorites, region, and cuisine tags",
+      "Recipe Detail View: Shows detailed recipe information including ingredients, cooking steps, photos, and interactive favorite/unfavorite buttons",
+      "AI Chatbot Screen: Enables users to type recipe-related questions like 'how to cook adobo', triggering either an API fetch or keyword-based responses displaying relevant recipes",
+      "Voice Read Aloud Feature: When viewing recipe ingredients or steps, the app reads the text aloud with adjustable speed, enhancing hands-free cooking convenience",
+      "Social Feed Screen: Users can scroll through posts with images, captions, likes, comments, and ratings shared by other users, with an option to add a new post",
+      "Profile Page: Displays user statistics such as number of recipes added, followers, and following count with user profile picture",
+      "Settings Page: Allows users to customize app preferences including the speed of voice read aloud",
+      "Add Recipe Screen: Form where users can input new recipes including title, ingredients, steps, cooking time, cuisine, and upload photos",
+      "Search Recipes: Lets users search for recipes by sending queries to TheMealDB API, providing a variety of recipes from different cuisines with images and basic info",
+      "Notification System: Notifies users about relevant app updates or social interactions"
+    ],
+    technologyStack: {
+      frontend: ["SwiftUI", "Swift"],
+      backend: ["Supabase (PostgreSQL)", "TheMealDB API"],
+      authentication: ["Supabase Auth"],
+      realTime: ["Supabase Realtime"],
+      additional: ["AI Chatbot (keyword-based)", "Text-to-Speech", "iOS App Development", "ObservableObject for state management"]
+    },
+    targetUsers: [
+      "Home cooks",
+      "Cooking enthusiasts",
+      "Recipe collectors",
+      "Social recipe sharers",
+      "iOS users",
+      "People who prefer hands-free cooking"
+    ]
+  },
+  "sarap-io": {
+    images: [
+      "/projects/sarapio/sarapio-logo.png", // Logo preview image
+      "/projects/sarapio/1.png", // App screenshot
+    ],
+    briefDescription: "Recipe application with extensive recipe collection, social interaction, AI chatbot assistance, and voice read-aloud functionality for hands-free cooking.",
+    longDescription: `Sarap.io is a recipe application designed to provide users with an extensive collection of recipes, social interaction, and personalized cooking assistance. The app connects to a Supabase backend for database storage and integrates TheMealDB API to fetch recipes dynamically. It features an AI chatbot that aids users in searching recipes via keywords with a fallback mechanism if the API fails. The app enhances user experience by reading recipes aloud with adjustable voice speed, allowing hands-free operation. It also includes a social media feed for users to share and explore recipes from others, a profile page for user statistics, and settings for customization.
+
+This project was developed as part of a course (M065-ITWM105) and represents my first iOS application built with SwiftUI.`,
+    features: [
+      "Home Screen / Recipe List: Displays a list of available recipes with search and filtering options",
+      "Recipe Detail View: Shows detailed recipe information including ingredients, cooking steps, and photos",
+      "AI Chatbot: Keyword-based recipe search assistant with fallback mechanism",
+      "Voice Read Aloud: Hands-free cooking with adjustable voice speed",
+      "Social Feed: Upload, share, and explore recipes from other users",
+      "Profile Page: Displays user statistics and profile information",
+      "Settings & Customization: Customize app preferences including voice speed",
+      "Add Recipe: Form interface to input new recipes",
+      "Search Recipes: Search for recipes via TheMealDB API"
+    ],
+    technologyStack: {
+      frontend: ["SwiftUI", "Swift"],
+      backend: ["Supabase (PostgreSQL)", "TheMealDB API"],
+      authentication: ["Supabase Auth"],
+      realTime: ["Supabase Realtime"],
+      additional: ["AI Chatbot (keyword-based)", "Text-to-Speech", "iOS App Development"]
+    },
+    targetUsers: [
+      "Home cooks",
+      "Cooking enthusiasts",
+      "Recipe collectors",
+      "iOS users"
+    ]
+  },
+  "plana": {
+    images: [
+      "/projects/plana/planalogo.png", // Logo preview image
+      "/projects/plana/1.png", // App screenshot
+    ],
+    briefDescription: "A featured project showcasing innovative solutions and modern development practices.",
+    longDescription: `Plana is a featured project that demonstrates modern web development practices and innovative solutions. This project showcases proficiency in various technologies and best practices in software development.`,
+    features: [
+      // Add project features here
     ],
     technologyStack: {
       frontend: [],

@@ -12,6 +12,38 @@ import { FloatingNav } from "@/components/ui/floating-nav";
 import { ScrollProgress } from "@/components/ui/scroll-progress";
 import { ParticleBackground } from "@/components/ui/particle-background";
 import { customProjectDetails } from "@/lib/project-details";
+import { ImageLightbox } from "@/components/ui/image-lightbox";
+
+// Helper function to get project background color
+function getProjectBackgroundColor(slug: string): string {
+  const lowerSlug = slug.toLowerCase();
+  
+  if (lowerSlug.includes('travelink') || lowerSlug.includes('travi-link') || lowerSlug.includes('trave-link')) {
+    if (lowerSlug.includes('mobile')) {
+      return 'bg-red-50'; // Light red background for mobile
+    }
+    return 'bg-white'; // White background for Travelink
+  }
+  
+  if (lowerSlug.includes('drive') && lowerSlug.includes('abi')) {
+    return 'bg-white'; // White background for Drive Abi
+  }
+  
+  if (lowerSlug.includes('sarap')) {
+    return 'bg-gray-100'; // Light grey background for Sarap.io
+  }
+  
+  if (lowerSlug.includes('plana')) {
+    return 'bg-gradient-to-br from-blue-900 via-purple-900 to-blue-800'; // Dark blue-purple gradient
+  }
+  
+  if (lowerSlug.includes('alamat')) {
+    return 'bg-gradient-to-br from-blue-800 via-purple-800 to-indigo-900'; // Dark blue-purple gradient
+  }
+  
+  // Default gradient
+  return 'bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20';
+}
 
 // Helper function to format project names
 function formatProjectName(name: string): string {
@@ -58,6 +90,8 @@ export default function ProjectDetailPage() {
   const [imageError, setImageError] = useState(false);
   const [readmeContent, setReadmeContent] = useState<string | null>(null);
   const [readmeLoading, setReadmeLoading] = useState(false);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState(0);
 
   useEffect(() => {
     async function loadRepo() {
@@ -213,6 +247,14 @@ export default function ProjectDetailPage() {
   const customDetails = getProjectDetails(slug);
   const projectImages = customDetails.images || [];
   const hasCustomImages = projectImages.length > 0;
+  const isMobileProject = slug.toLowerCase().includes('mobile');
+  const isPlanaProject = slug.toLowerCase().includes('plana');
+  const isSarapioProject = slug.toLowerCase().includes('sarap');
+
+  const openLightbox = (index: number) => {
+    setLightboxIndex(index);
+    setLightboxOpen(true);
+  };
 
   return (
     <>
@@ -263,21 +305,27 @@ export default function ProjectDetailPage() {
                       initial={{ opacity: 0, scale: 0.95 }}
                       animate={{ opacity: 1, scale: 1 }}
                       transition={{ duration: 0.5, delay: 0.2 }}
-                      className="relative w-full h-64 md:h-96 lg:h-[500px] rounded-2xl overflow-hidden mb-8 bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20"
+                      className={`relative w-full h-64 md:h-96 lg:h-[500px] rounded-2xl overflow-hidden mb-8 ${getProjectBackgroundColor(slug)} cursor-pointer group`}
+                      onClick={() => hasCustomImages && openLightbox(0)}
                     >
                 {hasCustomImages ? (
-                  <Image
-                    src={projectImages[0]}
-                    alt={repo.name}
-                    fill
-                    className="object-cover"
-                    style={{
-                      objectPosition: slug.toLowerCase().includes('mobile') 
-                        ? 'center 15%' 
-                        : 'center'
-                    }}
-                    priority
-                  />
+                  <>
+                    {/* Preview image (logo) - no cropping */}
+                    <div className="relative w-full h-full">
+                      <Image
+                        src={projectImages[0]}
+                        alt={repo.name}
+                        fill
+                        className="object-contain group-hover:scale-105 transition-transform duration-300"
+                        priority
+                      />
+                    </div>
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
+                      <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-sm font-medium px-4 py-2 rounded-lg bg-black/50 backdrop-blur-sm">
+                        Click to view full image
+                      </div>
+                    </div>
+                  </>
                 ) : (
                   <>
                     <Image
@@ -437,19 +485,37 @@ export default function ProjectDetailPage() {
                       whileInView={{ opacity: 1, y: 0 }}
                       viewport={{ once: true }}
                       transition={{ delay: index * 0.1 }}
-                      className="relative aspect-video rounded-xl overflow-hidden bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20"
+                      className="relative aspect-video rounded-xl overflow-hidden bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20 cursor-pointer group"
+                      onClick={() => openLightbox(index + 1)}
                     >
-                      <Image
-                        src={image}
-                        alt={`${repo.name} screenshot ${index + 2}`}
-                        fill
-                        className="object-cover hover:scale-105 transition-transform duration-300"
+                      {/* Gallery images (screenshots) - with cropping for mobile apps */}
+                      <div
+                        className="relative w-full h-full"
                         style={{
-                          objectPosition: slug.toLowerCase().includes('mobile') 
-                            ? 'center 15%' 
-                            : 'center'
+                          clipPath: (isMobileProject || isPlanaProject || isSarapioProject) 
+                            ? (isSarapioProject ? "inset(8% 0 8% 0)" : "inset(8% 0 0 0)") 
+                            : undefined,
                         }}
-                      />
+                      >
+                        <Image
+                          src={image}
+                          alt={`${repo.name} screenshot ${index + 2}`}
+                          fill
+                          className="object-cover group-hover:scale-105 transition-transform duration-300"
+                          style={{
+                            objectPosition: isPlanaProject 
+                              ? 'center 60%' 
+                              : isMobileProject 
+                              ? 'center 20%' 
+                              : 'center'
+                          }}
+                        />
+                      </div>
+                      <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
+                        <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-xs font-medium px-3 py-1.5 rounded-lg bg-black/50 backdrop-blur-sm">
+                          Click to enlarge
+                        </div>
+                      </div>
                     </motion.div>
                   ))}
                 </div>
@@ -667,6 +733,19 @@ export default function ProjectDetailPage() {
           </section>
         </div>
       </main>
+
+      {/* Image Lightbox */}
+      {hasCustomImages && projectImages.length > 0 && (
+        <ImageLightbox
+          images={projectImages}
+          currentIndex={lightboxIndex}
+          isOpen={lightboxOpen}
+          onClose={() => setLightboxOpen(false)}
+          onNavigate={setLightboxIndex}
+          projectName={repo.name}
+          isMobile={isMobileProject || isPlanaProject || isSarapioProject}
+        />
+      )}
     </>
   );
 }

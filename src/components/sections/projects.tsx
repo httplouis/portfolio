@@ -24,6 +24,37 @@ interface GitHubRepo {
 }
 
 // Helper function to format project names
+// Helper function to get project background color
+function getProjectBackgroundColor(repoName: string): string {
+  const lowerName = repoName.toLowerCase();
+  
+  if (lowerName.includes('travelink') || lowerName.includes('travi-link') || lowerName.includes('trave-link')) {
+    if (lowerName.includes('mobile')) {
+      return 'bg-red-50'; // Light red background for mobile
+    }
+    return 'bg-white'; // White background for Travelink
+  }
+  
+  if (lowerName.includes('drive') && lowerName.includes('abi')) {
+    return 'bg-white'; // White background for Drive Abi
+  }
+  
+  if (lowerName.includes('sarap')) {
+    return 'bg-gray-100'; // Light grey background for Sarap.io
+  }
+  
+  if (lowerName.includes('plana')) {
+    return 'bg-gradient-to-br from-blue-900 via-purple-900 to-blue-800'; // Dark blue-purple gradient
+  }
+  
+  if (lowerName.includes('alamat')) {
+    return 'bg-gradient-to-br from-blue-800 via-purple-800 to-indigo-900'; // Dark blue-purple gradient
+  }
+  
+  // Default gradient
+  return 'bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20';
+}
+
 function formatProjectName(name: string): string {
   const lowerName = name.toLowerCase();
   
@@ -257,21 +288,19 @@ export function Projects() {
                     />
 
                     {/* Project Preview Image */}
-                    <div className="relative w-full h-48 overflow-hidden bg-gradient-to-br from-blue-500/20 via-purple-500/20 to-pink-500/20">
+                    <div className={`relative w-full h-48 overflow-hidden ${getProjectBackgroundColor(repo.name)}`}>
                       {customImage ? (
-                        <Image
-                          src={customImage}
-                          alt={`${repo.name} preview`}
-                          fill
-                          className="object-cover group-hover:scale-105 transition-transform duration-300"
-                          style={{
-                            objectPosition: repo.name.toLowerCase().includes('mobile') 
-                              ? 'center 15%' 
-                              : 'center'
-                          }}
-                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                          priority={index < 3}
-                        />
+                        /* Preview image (logo) - no cropping, use object-contain */
+                        <div className="relative w-full h-full">
+                          <Image
+                            src={customImage}
+                            alt={`${repo.name} preview`}
+                            fill
+                            className="object-contain group-hover:scale-105 transition-transform duration-300"
+                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            priority={index < 3}
+                          />
+                        </div>
                       ) : (
                         <Image
                           src={`https://opengraph.githubassets.com/1/httplouis/${repo.name}`}
