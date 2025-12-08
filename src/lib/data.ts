@@ -57,7 +57,7 @@ export interface Education {
 
 export const personalInfo: PersonalInfo = {
   name: "Jose Louis D. Rosales",
-  role: "Full Stack Developer",
+  role: "Aspiring Full Stack Developer",
   bio: "I am an Information Technology student focusing on web and mobile application development. I work with modern stacks and I'm comfortable learning new tools when projects require it. My 3 years as a student assistant in the Engineering Department helped me develop professionalism, organization, and the ability to work under pressure.",
   email: "joselouis.rosales.cdscdb@gmail.com",
   phone: "+63 9935583858",
@@ -65,7 +65,7 @@ export const personalInfo: PersonalInfo = {
   github: "https://github.com/httplouis",
   linkedin: "https://www.linkedin.com/in/jose-louis-rosales08/",
   resume: "/Rosales_Resume.docx",
-  profileImage: "/jolo.jpg",
+  profileImage: "/jolo-image.jfif",
   dateOfBirth: "2003-10-08",
   additionalInfo: "Passionate about creating innovative solutions and continuously learning new technologies. I enjoy collaborating with teams and turning ideas into reality through code.",
 };
