@@ -44,7 +44,7 @@ CONTACT_EMAIL=your-email@example.com
 4. Click "Add New"
 5. Add these environment variables:
    - **Key:** `RESEND_API_KEY`
-   - **Value:** `re_Cm2MKUro_Kx5TpGthhSwh55B4trALtwVB` (your Resend API key)
+   - **Value:** `` (your Resend API key)
    - **Environment:** Select "Production", "Preview", and "Development" (or at least "Production")
    - Click "Save"
    
